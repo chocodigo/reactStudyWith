@@ -1,18 +1,11 @@
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
-import { NotionRenderer } from "react-notion";
-import { useNotion } from "./hooks/useNotion";
+import { Notion } from "./Notion";
 
 const Home = () => {
   const NOTION_PAGE_ID = "Study-3dde10f909704223980a9e67fb551090";
 
-  const { response } = useNotion(NOTION_PAGE_ID);
-
-  return response ? (
-    <NotionRenderer blockMap={response} fullPage={true} />
-  ) : (
-    <></>
-  );
+  return <Notion id={NOTION_PAGE_ID} />;
 };
 
 export default Home;
