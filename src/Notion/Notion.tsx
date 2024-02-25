@@ -1,5 +1,6 @@
 import { NotionRenderer } from "react-notion";
 import { useNotion } from "./useNotion";
+import { Stack } from "@mui/material";
 
 interface NotionProps {
   id: string;
@@ -8,9 +9,13 @@ interface NotionProps {
 export const Notion = ({ id }: NotionProps) => {
   const { response } = useNotion(id);
 
-  return response ? (
-    <NotionRenderer blockMap={response} fullPage={true} />
-  ) : (
-    <></>
+  return (
+    <Stack sx={{ padding: "16px" }}>
+      {response ? (
+        <NotionRenderer blockMap={response} fullPage={true} />
+      ) : (
+        <></>
+      )}
+    </Stack>
   );
 };
