@@ -2,6 +2,7 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { SyntheticEvent, useState } from "react";
 import Chapter1 from "./Chapter1";
 import Chapter2 from "./Chapter2";
+import Chapter3 from "./Chapter3";
 
 function a11yProps(index: number) {
   return {
@@ -52,6 +53,10 @@ export const Home = () => {
       key: "chapter2",
       component: <Chapter2 />,
     },
+    {
+      key: "chapter3",
+      component: <Chapter3 />,
+    },
   ];
 
   return (
@@ -71,8 +76,9 @@ export const Home = () => {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: "divider" }}
       >
-        <Tab label="Chapter1" {...a11yProps(0)} />
-        <Tab label="Chpater2" {...a11yProps(1)} />
+        {chapterList.map((item, index) => (
+          <Tab label={item.key} key={item.key} {...a11yProps(index)} />
+        ))}
       </Tabs>
       {chapterList.map((item, idx) => (
         <TabPanel value={value} index={idx} key={item.key}>
