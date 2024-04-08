@@ -3,6 +3,9 @@ import { SyntheticEvent, useState } from "react";
 import Chapter1 from "./Chapter1";
 import Chapter2 from "./Chapter2";
 import Chapter3 from "./Chapter3";
+import Chapter4 from "./Chapter4";
+import Chapter5 from "./Chapter5";
+import Chapter6 from "./Chapter6";
 
 function a11yProps(index: number) {
   return {
@@ -56,6 +59,18 @@ export const Home = () => {
     {
       key: "chapter3",
       component: <Chapter3 />,
+    },
+    {
+      key: "chapter4",
+      component: <Chapter4 />,
+    },
+    {
+      key: "chapter5",
+      component: <Chapter5 />,
+    },
+    {
+      key: "chapter6",
+      component: <Chapter6 />,
     },
   ];
 
