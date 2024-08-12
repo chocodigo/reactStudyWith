@@ -6,6 +6,9 @@ import Chapter3 from "./Chapter3";
 import Chapter4 from "./Chapter4";
 import Chapter5 from "./Chapter5";
 import Chapter6 from "./Chapter6";
+import { Chapter10 } from "./Chapter10";
+import { Chapter11 } from "./Chapter11";
+import { Chapter12 } from "./Chapter12";
 
 function a11yProps(index: number) {
   return {
@@ -71,6 +74,18 @@ export const Home = () => {
     {
       key: "chapter6",
       component: <Chapter6 />,
+    },
+    {
+      key: "chapter10",
+      component: <Chapter10 />,
+    },
+    {
+      key: "chapter11",
+      component: <Chapter11 />,
+    },
+    {
+      key: "chapter12",
+      component: <Chapter12 />,
     },
   ];
 
